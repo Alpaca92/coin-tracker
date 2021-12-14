@@ -22,6 +22,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "deploy": "",
+    "predeploy": "npm run build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -44,6 +46,8 @@
     ]
   },
   "devDependencies": {
-    "@types/styled-components": "^5.1.16"
-  }
+    "@types/styled-components": "^5.1.16",
+    "gh-pages": "^3.2.3"
+  },
+  "homepage": "https://Alpaca92.github.io/coin-tracker"
 }
