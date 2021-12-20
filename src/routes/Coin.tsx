@@ -15,6 +15,7 @@ const Container = styled.div`
 const Header = styled.header`
   height: 10vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 `;
@@ -163,6 +164,9 @@ function Coin() {
         <Title>
           {state?.name ? state.name : loading ? "Loading..." : infoData?.name}
         </Title>
+        <Link className="back-btn" to="..">
+          &larr; Go back
+        </Link>
       </Header>
       {loading ? (
         <Loader>Loading...</Loader>
