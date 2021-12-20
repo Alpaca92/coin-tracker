@@ -142,7 +142,7 @@ interface ILocation {
 }
 
 function Coin() {
-  const { coinId } = useParams();
+  const { coinId } = useParams() as unknown as IParams;
   const { state } = useLocation() as ILocation;
   const priceMatch = useMatch("/:coinId/price");
   const chartMatch = useMatch("/:coinId/chart");
@@ -207,7 +207,7 @@ function Coin() {
           </Tabs>
 
           <Routes>
-            <Route path="chart" element={<Chart />} />
+            <Route path="chart" element={<Chart coinId={coinId} />} />
             <Route path="price" element={<Price />} />
           </Routes>
         </>
