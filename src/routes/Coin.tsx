@@ -130,9 +130,19 @@ interface ITickers {
   };
 }
 
+interface IParams {
+  coinId: string;
+}
+
+interface ILocation {
+  state: {
+    name: string;
+  };
+}
+
 function Coin() {
   const { coinId } = useParams();
-  const { state } = useLocation();
+  const { state } = useLocation() as ILocation;
   const priceMatch = useMatch("/:coinId/price");
   const chartMatch = useMatch("/:coinId/chart");
 
