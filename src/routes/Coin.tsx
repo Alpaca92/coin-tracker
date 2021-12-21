@@ -14,11 +14,25 @@ const Container = styled.div`
 `;
 
 const Header = styled.header`
+  position: relative;
   height: 10vh;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  .back-btn {
+    position: absolute;
+    top: calc(5vh - (35px / 2));
+    right: 5px;
+    width: 35px;
+    height: 35px;
+    background-color: #000;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+  }
 `;
 
 const Title = styled.h1`
@@ -172,7 +186,7 @@ function Coin() {
           {state?.name ? state.name : loading ? "Loading..." : infoData?.name}
         </Title>
         <Link className="back-btn" to="..">
-          &larr; Go back
+          &larr;
         </Link>
       </Header>
       {loading ? (
