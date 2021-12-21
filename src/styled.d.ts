@@ -5,6 +5,7 @@ import "styled-components";
 declare module "styled-components" {
   export interface DefaultTheme {
     textColor: string;
+    chipsColor: string;
     bgColor: string;
     accentColor: string;
   }

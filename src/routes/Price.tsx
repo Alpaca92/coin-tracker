@@ -7,7 +7,7 @@ const Container = styled.section`
 `;
 
 const DetailContainer = styled.article`
-  background-color: #171b20;
+  background-color: ${(props) => props.theme.chipsColor};
   padding: 25px 20px;
   margin-top: 10px;
   border-radius: 15px;
