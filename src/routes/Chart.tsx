@@ -23,17 +23,28 @@ function Chart({ coinId, isLight }: ChartProps) {
     ["ohlcv", coinId],
     () => fatchCoinHistory(coinId)
   );
+
+  console.log(
+    data?.map(({ time_open, open, high, low, close }) => ({
+      x: new Date(time_open),
+      y: [open, high, low, close],
+    }))
+  );
+
   return (
     <div>
       {isLoading ? (
         "Loading chart..."
       ) : (
         <ApexChart
-          type="line"
+          type="candlestick"
           series={[
             {
               name: coinId,
-              data: data?.map((price) => price.close),
+              data: data?.map(({ time_open, open, high, low, close }) => ({
+                x: time_open,
+                y: [open, high, low, close],
+              })),
             },
           ]}
           options={{
@@ -41,18 +52,12 @@ function Chart({ coinId, isLight }: ChartProps) {
               mode: isLight ? "light" : "dark",
             },
             chart: {
+              type: "candlestick",
               height: 500,
               width: 500,
               toolbar: {
                 show: false,
               },
-            },
-            stroke: {
-              curve: "smooth",
-              width: 5,
-            },
-            grid: {
-              show: false,
             },
             yaxis: {
               show: false,

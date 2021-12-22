@@ -26,7 +26,7 @@ const Header = styled.header`
     right: 5px;
     width: 35px;
     height: 35px;
-    background-color: #000;
+    background-color: rgba(125, 125, 125, 0.5);
     border-radius: 50%;
     display: flex;
     justify-content: center;
