@@ -9,8 +9,7 @@ interface RouterProps {
 
 function Router({ toggleMode, isLight }: RouterProps) {
   return (
-    // <BrowserRouter>
-    <BrowserRouter basename="process.env.PUBLIC_URL">
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Routes>
         <Route path="/" element={<Coins toggleMode={toggleMode} />} />
         <Route path="/:coinId/*" element={<Coin isLight={isLight} />} />
