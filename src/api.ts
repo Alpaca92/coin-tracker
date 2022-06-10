@@ -16,7 +16,7 @@ export async function fetchCoinTickers(coinId: string) {
     : null;
 }
 
-export async function fatchCoinHistory(coinId: string) {
+export async function fetchCoinHistory(coinId: string) {
   const endDate = Math.floor(Date.now() / 1000);
   const startDate = endDate - 60 * 60 * 24 * 14;
 
