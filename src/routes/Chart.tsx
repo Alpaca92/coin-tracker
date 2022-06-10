@@ -26,13 +26,6 @@ function Chart({ coinId }: ChartProps) {
     () => fetchCoinHistory(coinId)
   );
 
-  console.log(
-    data?.map(({ time_open, open, high, low, close }) => ({
-      x: new Date(time_open),
-      y: [open, high, low, close],
-    }))
-  );
-
   return (
     <div>
       {isLoading ? (
